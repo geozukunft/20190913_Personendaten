@@ -41,30 +41,47 @@ namespace Personendaten
 
         private void cmdResult_Click(object sender, EventArgs e)
         {
-            if(rdoFemale.Checked == true)
+            if (txtFirstName.Text != "")
             {
-                gender = rdoFemale.Text;
-                lblResult.BackColor = Color.Pink;
-            }
-            else if(rdoMale.Checked == true)
-            {
-                gender = rdoMale.Text;
-                lblResult.BackColor = Color.Blue;
-            }
-            else
-            {
-                gender = "An exception was thrown 0x000001";
-            }
-            lblResult.Text = "Sie heißen " + txtFirstName.Text + " " + txtLastname.Text +
-                "\nSie sind " + numBirthyear.Value + " geboren" +
-                "\nIhr Geschlecht ist " + gender;
+                gboGender.Visible = true;
+
+                if (rdoFemale.Checked == true)
+                {
+                    gender = rdoFemale.Text;
+                    lblResult.BackColor = Color.Pink;
+                }
+                else if (rdoMale.Checked == true)
+                {
+                    gender = rdoMale.Text;
+                    lblResult.BackColor = Color.Blue;
+                }
+                else
+                {
+                    gender = "An exception was thrown 0x000001";
+                }
+                lblResult.Text = "Sie heißen " + txtFirstName.Text + " " + txtLastname.Text +
+                    "\nSie sind " + numBirthyear.Value + " geboren" +
+                    "\nIhr Geschlecht ist " + gender;
 
 
+            }
         }
-
         private void cmdClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void cmdReset_Click(object sender, EventArgs e)
+        {
+            gender = "";
+            txtFirstName.ResetText();
+            txtLastname.ResetText();
+            numBirthyear.Value = 1900;
+            rdoFemale.Checked = false;
+            rdoMale.Checked = false;
+            gboGender.Visible = false;
+            lblResult.ResetText();
+
         }
     }
 }

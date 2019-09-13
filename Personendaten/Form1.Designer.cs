@@ -41,6 +41,7 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.cmdResult = new System.Windows.Forms.Button();
             this.cmdClose = new System.Windows.Forms.Button();
+            this.cmdReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numBirthyear)).BeginInit();
             this.gboGender.SuspendLayout();
             this.SuspendLayout();
@@ -180,7 +181,7 @@
             // 
             // cmdClose
             // 
-            this.cmdClose.Location = new System.Drawing.Point(1008, 668);
+            this.cmdClose.Location = new System.Drawing.Point(1008, 748);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(268, 86);
             this.cmdClose.TabIndex = 10;
@@ -188,12 +189,23 @@
             this.cmdClose.UseVisualStyleBackColor = true;
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
+            // cmdReset
+            // 
+            this.cmdReset.Location = new System.Drawing.Point(1008, 656);
+            this.cmdReset.Name = "cmdReset";
+            this.cmdReset.Size = new System.Drawing.Size(268, 86);
+            this.cmdReset.TabIndex = 11;
+            this.cmdReset.Text = "Reset";
+            this.cmdReset.UseVisualStyleBackColor = true;
+            this.cmdReset.Click += new System.EventHandler(this.cmdReset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(28F, 55F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1596, 974);
+            this.Controls.Add(this.cmdReset);
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.cmdResult);
             this.Controls.Add(this.lblResult);
@@ -233,6 +245,7 @@
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Button cmdResult;
         private System.Windows.Forms.Button cmdClose;
+        private System.Windows.Forms.Button cmdReset;
     }
 }
 
